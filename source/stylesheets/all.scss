@@ -1,0 +1,41 @@
+
+@import "helpers/variables";
+@import "mixins/mixin";
+
+body, html {
+  font-size: $base-font-size;
+}
+
+h1 {
+  font-size: toRem(36px);
+}
+h2 {
+  font-size: toRem(32px);
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
+
+.card {
+  height: 500px;
+  .card-center {
+    @extend %vertical-center;
+  }
+}
+
+.icon-youtube {
+  @include svgicon('youtube', 64px, 64px);
+}
+
+
+.container-rwd {
+  @include breakpoint-down(960px) {
+    background-color: #000;
+  }
+
+  @include mobile {
+    background-color: brown;
+  }
+}

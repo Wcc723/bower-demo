@@ -1,0 +1,48 @@
+
+// PX 轉 REM
+@function toRem($px) { 
+  @return ($px / $base-font-size) * 1rem; 
+}
+
+// 清除浮動
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// 垂直置中
+%vertical-center {
+  position: relative;
+	top: 50%;
+	transform: translateY(- 50%);
+}
+
+// svg icon & png 
+@mixin svgicon($icon, $width, $height) {
+  display: inline-block;
+  background-image: url("../images/icons/#{$icon}.png");
+  background-image: none, url("../images/icons/#{$icon}.svg");
+  width: $width;
+  height: $height;
+} 
+
+// Breakpoint
+@mixin breakpoint-up($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+@mixin breakpoint-down($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
