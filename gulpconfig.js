@@ -32,6 +32,6 @@ module.exports = {
   },
   sass: {
     'output_style': 'compressed', // sass 輸出模式，可選 'nested', 'expanded', 'compact', 'compressed'
-    // 'includePaths': ['./bower_components/bootstrap/scss/']
+    'includePaths': ['./sass_libs/']
   }
 }
